@@ -1,7 +1,5 @@
 # Counter-Up2
 
-[![Build Status](https://travis-ci.org/bfintal/Counter-Up2.svg?branch=master)](https://travis-ci.org/bfintal/Counter-Up2)
-
 Counter-Up is a lightweight module that counts up to a targeted number when the number becomes visible.
 
 An improvement to https://github.com/bfintal/Counter-Up

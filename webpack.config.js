@@ -1,35 +1,42 @@
-module.exports = [ {
+const webpack = require('webpack');
+const PACKAGE = require('./package.json');
+const banner = `${PACKAGE.name} v${PACKAGE.version} | ${PACKAGE.homepage}`;
 
-    mode: 'production',
+module.exports = [{
 
-    // devtool: 'hidden-source-map',
+  mode: 'production',
 
-	entry: {
-        'index': './index.js'
-    },
+  // devtool: 'hidden-source-map',
 
-	output: {
-        filename: '[name].js',
-        library: 'counterUp',
-        libraryTarget: 'umd'
-    },
+  entry: {
+    'index': './index.js'
+  },
 
-	module: {
-        strictExportPresence: true,
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-    					cacheDirectory: true,
-                        plugins: [
-                            'transform-es2015-destructuring',
-                        ]
-                    }
-                }
-			},
-        ]
-    }
-} ]
+  output: {
+    filename: 'counter-up.min.js',
+    library: 'counterUp',
+    libraryTarget: 'umd'
+  },
+
+  module: {
+    strictExportPresence: true,
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            plugins: [
+              'transform-es2015-destructuring',
+            ]
+          }
+        }
+      },
+    ]
+  },
+  plugins: [
+    new webpack.BannerPlugin(banner)
+  ]
+}];

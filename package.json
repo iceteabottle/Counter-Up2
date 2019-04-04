@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bfintal/Counter-Up2.git"
+    "url": "git+https://github.com/iceteabottle/Counter-Up2.git"
   },
   "keywords": [
     "counterup",
@@ -22,14 +22,14 @@
     "stats",
     "countup"
   ],
-  "author": "Benjamin Intal",
-  "email": "bfintal@gmail.com",
-  "url": "https://benjaminintal.com",
+  "author": "Florian Symanowski",
+  "email": "iceteabottle@gmail.com",
+  "url": "https://www.symanowski.eu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bfintal/Counter-Up2/issues"
+    "url": "https://github.com/iceteabottle/Counter-Up2/issues"
   },
-  "homepage": "https://github.com/bfintal/Counter-Up2#readme",
+  "homepage": "https://github.com/iceteabottle/Counter-Up2",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
