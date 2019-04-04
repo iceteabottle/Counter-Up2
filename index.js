@@ -22,7 +22,7 @@ const counterUp = (el, options = {}) => {
 
   const num = el.getAttribute('data-num') || el.innerHTML;
   const nums = divideNumbers(num, {
-    duration: duration || el.getAttribute('data-duration'),
+    duration: el.getAttribute('data-duration') || duration,
     lang: lang || document.querySelector('html').getAttribute('lang') || undefined,
     delay: delay || el.getAttribute('data-delay'),
   });
@@ -106,7 +106,15 @@ export const divideNumbers = (num, options = {}) => {
         // If has decimal point, add it again.
         if (isFloat) {
           newNum = parseFloat(num / divisions * val).toFixed(decimalPlaces);
-          newNum = parseFloat(newNum).toLocaleString(lang)
+          const splitNumber = newNum.split('.');
+          const options = {};
+
+          if (splitNumber.length > 1) {
+            var fractionDigits = splitNumber[1].length;
+            options.minimumFractionDigits = fractionDigits;
+            options.maximumFractionDigits = fractionDigits;
+          }
+          newNum = parseFloat(newNum).toLocaleString(lang, options);
         } else {
           newNum = newNum.toLocaleString(lang);
         }
