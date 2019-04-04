@@ -1,9 +1,10 @@
-import { divideNumbers } from './index'
+import {divideNumbers} from './index'
 
-test( 'divideNumbers', () => {
-    const nums = divideNumbers( '100' )
-    expect( nums ).toEqual( expect.arrayContaining( [ '100' ] ) )
-    expect( nums[ nums.length - 1 ] ).toBe( '100' )
-    expect( nums[ 0 ] ).toBe( '' )
-} )
-  
+test('divideNumbers', () => {
+  const num = '1310.51';
+  const numFormatted = '1,310.51'; // jest will always use US for "toLocaleString()"
+  const nums = divideNumbers(num);
+  expect(nums).toEqual(expect.arrayContaining([numFormatted]));
+  expect(nums[nums.length - 1]).toBe(numFormatted);
+  expect(nums[0]).toBe('')
+});

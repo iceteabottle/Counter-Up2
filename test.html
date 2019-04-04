@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>CounterUp2</title>
+  <script type="module">
+    import counterUp from "./index.js";
+
+    window.initCounter = () => {
+      const elements = document.querySelectorAll('.js-counter-up');
+      elements.forEach((elem) => {
+        counterUp(elem, {});
+      });
+    };
+
+    initCounter();
+  </script>
+</head>
+<body>
+<div class="js-counter-up">2635352.3</div>
+<div class="js-counter-up" data-duration="5000">22.495</div>
+</body>
+</html>
