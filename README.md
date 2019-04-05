@@ -1,16 +1,23 @@
-# Counter-Up2
+# Counter-Up-3
 
-Counter-Up is a lightweight module that counts up to a targeted number when the number becomes visible.
+Counter-Up-3 is a lightweight module that counts up to a targeted number e.g. when the number becomes visible.
+It's based on [Counter-Up2](https://github.com/bfintal/Counter-Up2)
 
-An improvement to https://github.com/bfintal/Counter-Up
 
-### What Can You Count Up?
+### Count up what you want
 
 * Floats: `1.234`
 * Integers: `1234`
-* With commas: `1,234.56`
-* With non-numeric characters: `$1,234.56`
-* Multiple countable values: `604,800 seconds in 10,080 minutes in 168 hours in 7 days`
+* ~~Formatted numbers~: `1.234,56` (not available for now)
+* With non-numeric characters: `$1234.56`
+* Multiple countable values: `604.800 seconds in 10.080 minutes in 168 hours in 7 days`
+
+### Features
+* There's a build in formatter: e.g.
+  * with german locale: `1234.56` => `1.234,56`
+  * with US locale: `1234.56` => `1,234.56`
+* The formatter isn't optional for now
+* The counter prevent flickering by keeping the fraction digits all the time
 
 ### Usage
 
@@ -63,3 +70,6 @@ new Waypoint( {
     offset: 'bottom-in-view',
 } )
 ```
+
+### ToDo
+* Make the formatting optional

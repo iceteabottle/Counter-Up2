@@ -1,7 +1,7 @@
 {
-  "name": "counterup2",
-  "version": "1.0.4",
-  "description": "Counter-Up2 is a lightweight module that counts up to a targeted number when the number becomes visible.",
+  "name": "counter-up-3",
+  "version": "1.0.0",
+  "description": "Counter-Up-3 is a lightweight module that counts up to a targeted number e.g. when the number becomes visible.",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js",

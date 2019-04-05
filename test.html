@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CounterUp2</title>
+  <script src="dist/counter-up.min.js"></script>
   <script type="module">
     import counterUp from './index.js';
 
@@ -17,8 +18,14 @@
   </script>
 </head>
 <body>
-<div class="js-counter-up">5821 V</div>
+<div class="js-counter-up">5821 V 123kg</div>
 <div class="js-counter-up">2635352.3</div>
 <div class="js-counter-up" data-duration="2000">22.495 km</div>
+<script>
+  var elements = document.querySelectorAll('.js-counter-up');
+  Array.prototype.forEach.call(elements, function(elem) {
+    counterUp.default(elem);
+  });
+</script>
 </body>
 </html>
