@@ -71,7 +71,7 @@ export const divideNumbers = (num, options = {}) => {
   const divisions = duration / delay;
 
   // Split numbers and html tags.
-  const splitValues = num.toString().split(/(<[^>]+>|[0-9.][,.0-9]*[0-9]*)/);
+  const splitValues = num.toString().split(/(<[^>]+>|[0-9.][,.0-9]+[0-9]*)/);
 
   // Contains all numbers to be displayed.
   const nums = [];
@@ -84,7 +84,7 @@ export const divideNumbers = (num, options = {}) => {
   // Loop through all numbers and html tags.
   for (let i = 0; i < splitValues.length; i++) {
     // If number split it into smaller numbers and insert it to nums.
-    if (/([0-9.][,.0-9]*[0-9]*)/.test(splitValues[i]) && !/<[^>]+>/.test(splitValues[i])) {
+    if (/([0-9.][,.0-9]+[0-9]*)/.test(splitValues[i]) && !/<[^>]+>/.test(splitValues[i])) {
       let num = splitValues[i];
 
       // Remove comma for computation purposes.
@@ -102,6 +102,10 @@ export const divideNumbers = (num, options = {}) => {
       // Create small numbers
       for (let val = divisions; val >= 1; val--) {
         let newNum = parseInt(num / divisions * val, 10);
+
+        if (isNaN(newNum)) {
+          break;
+        }
 
         // If has decimal point, add it again.
         if (isFloat) {
